@@ -1,0 +1,22 @@
+/* UKD Jellyfin addon: visual title fallback for latest media rails. */
+
+/* CSS cannot rename dynamic Jellyfin strings semantically; this only changes visible text on later home rails. */
+.homePage .verticalSection:nth-of-type(n+4) .sectionTitle,
+.homePage .verticalSection:nth-of-type(n+4) .sectionTitleTextButton,
+.homePage .verticalSection:nth-of-type(n+4) .sectionTitleContainer h2 {
+  font-size: 0 !important;
+}
+
+.homePage .verticalSection:nth-of-type(n+4) .sectionTitle::after,
+.homePage .verticalSection:nth-of-type(n+4) .sectionTitleTextButton::after,
+.homePage .verticalSection:nth-of-type(n+4) .sectionTitleContainer h2::after {
+  content: "A\00D1 ADIDOS RECIENTES";
+  display: inline-block;
+  color: var(--ukd-text) !important;
+  font-family: var(--ukd-display-font) !important;
+  font-size: clamp(1.65rem, 2.2vw, 2.25rem) !important;
+  font-weight: 850 !important;
+  letter-spacing: 0.055em !important;
+  line-height: 0.96 !important;
+  vertical-align: middle;
+}

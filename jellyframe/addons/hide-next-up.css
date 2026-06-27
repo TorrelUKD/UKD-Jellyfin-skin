@@ -1,0 +1,13 @@
+/* UKD Jellyfin addon: hide Next Up using the observed Jellyfin home order. */
+
+/* Structural fallback for the observed home order: My Media, Continue Watching, Next Up. */
+.homePage .section2,
+.homePage .verticalSection:nth-of-type(3),
+.homePage .homeSectionsContainer > .verticalSection:nth-child(3),
+.homePage .sections > .verticalSection:nth-child(3),
+div.nextUpSection,
+.nextUpSection,
+#nextUpSection,
+#nextUpCollapsible {
+  display: none !important;
+}

@@ -65,7 +65,7 @@ SKIN CUSTOM JELLYFIN/
 
 ## Current Version
 
-Current CSS version: `0.3.2`.
+Current CSS version: `0.4.0`.
 
 Paste-ready CSS:
 
@@ -123,9 +123,7 @@ It includes rules for:
 - Bigger card hover/focus scale.
 - Library cards scaling more aggressively.
 - `overflow: visible` to avoid clipped hover/focus states.
-- Hiding `.homePage .section2`, based on the observed Jellyfin home order: `Mis contenidos`, `Seguir viendo`, `A continuacion`.
-
-This `.section2` rule is intentionally aggressive and may need replacement with a more semantic selector if the framework can inspect the DOM or Jellyfin data.
+- No longer hides home sections in the base CSS.
 
 The `0.3.0` override block is layered after `0.2.0` and is labeled:
 
@@ -153,14 +151,14 @@ It adds:
 - Header/tab overflow fixes to avoid clipped focus pills and icons in browser.
 - Extra spacing for section-title slits so `MIS CONTENIDOS` does not clip the visual marker.
 - Broader HTML-overlay hiding for library cards in `Mis contenidos`.
-- Structural fallback selectors for hiding the observed third home rail, currently `A continuacion`.
-- A temporary visual CSS fallback that shows later home rail titles as `ANADIDOS RECIENTES`.
+- Structural fallbacks for `A continuacion` and recent rail titles were moved to JellyFrame addons in `0.4.0`.
 
 Important stabilization decision:
 
 - The user successfully removed `Colecciones` from the home/list using Jellyfin configuration. Do not hide `Colecciones` with CSS unless explicitly requested later.
 - If library names still appear inside images after the HTML-overlay rules, the text is likely baked into the library images and must be fixed by replacing library artwork in Jellyfin.
 - Renaming `Reciente en <library>` is not semantically solved by CSS; the `0.3.1` fallback is visual only and should be replaced by API/plugin rendering later.
+- In `0.4.0`, both of those CSS fallbacks are optional JellyFrame addons instead of base theme behavior.
 
 The `0.3.2` block adapts the theme for Jellyfin-PG JellyFrame:
 
@@ -169,6 +167,16 @@ The `0.3.2` block adapts the theme for Jellyfin-PG JellyFrame:
 - `dist/ukd-jellyfin.css` is intended to be served from jsDelivr at `https://cdn.jsdelivr.net/gh/TorrelUKD/UKD-Jellyfin-skin@main/dist/ukd-jellyfin.css`.
 - Font URLs are absolute jsDelivr URLs pointing to `assets/fonts/elms-sans/` because JellyFrame serves cached CSS from a local API endpoint, where relative font URLs would resolve incorrectly.
 - Focus styling on home cards was changed from full outer rings to a lateral projector bar to avoid crossing card titles.
+
+The `0.4.0` JellyFrame pass corrected the theme format and packaging:
+
+- The correct JellyFrame manifest is `jellyframe/themes.json`.
+- The theme id is `ukd-jellyfin`.
+- JellyFrame variables use `SCREAMING_SNAKE_CASE` keys.
+- Fragile CSS-only behavior was moved out of the base theme and into optional addons:
+  - `jellyframe/addons/hide-next-up.css`
+  - `jellyframe/addons/recent-title.css`
+- The base theme keeps the visual identity and focus treatment only.
 
 ## Known Screenshot Context
 

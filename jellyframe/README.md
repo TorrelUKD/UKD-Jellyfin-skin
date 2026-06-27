@@ -36,5 +36,6 @@ Notes:
 
 - JellyFrame uses `themes.json`, not `skins.json`.
 - Variables use `SCREAMING_SNAKE_CASE` keys. JellyFrame exposes them as CSS custom properties such as `--ukd-card-scale`.
+- `Hide Next Up` and `Rename recent rails` are optional addons controlled by boolean variables.
 - `Colecciones` should stay hidden through Jellyfin configuration, not CSS.
 - Library names baked into library images cannot be removed by CSS. Replace the library artwork in Jellyfin with clean images.

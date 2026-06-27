@@ -4,7 +4,7 @@
     "name": "UKD Jellyfin",
     "author": "TorrelUKD",
     "description": "Cinematic TV-first Jellyfin theme with projection-room identity, Elms Sans typography, strong remote focus, and backdrop atmosphere for movies, series and anime libraries.",
-    "version": "0.3.2",
+    "version": "0.4.0",
     "jellyfin": "10.11+",
     "tags": ["dark", "modern", "backdrops", "tv", "minimal"],
     "previewUrl": "https://cdn.jsdelivr.net/gh/TorrelUKD/UKD-Jellyfin-skin@main/assets/images/ukd-preview.svg",
@@ -62,6 +62,36 @@
         "description": "Vertical lift for My Media library cards. Use CSS units, e.g. 0.65rem.",
         "type": "text",
         "default": "0.65rem"
+      },
+      {
+        "key": "UKD_HIDE_NEXT_UP",
+        "name": "Hide Next Up",
+        "description": "Hide the observed Next Up rail from the home screen. This depends on Jellyfin home order.",
+        "type": "boolean",
+        "default": "true"
+      },
+      {
+        "key": "UKD_RECENT_TITLE_FALLBACK",
+        "name": "Rename recent rails",
+        "description": "Visually show later home rail titles as Anadidos recientes. CSS-only fallback until a plugin home exists.",
+        "type": "boolean",
+        "default": "true"
+      }
+    ],
+    "addons": [
+      {
+        "id": "hide-next-up",
+        "name": "Hide Next Up",
+        "description": "Hides the observed third home rail, currently A continuacion.",
+        "cssUrl": "https://cdn.jsdelivr.net/gh/TorrelUKD/UKD-Jellyfin-skin@main/jellyframe/addons/hide-next-up.css",
+        "triggerVar": "UKD_HIDE_NEXT_UP"
+      },
+      {
+        "id": "recent-title-fallback",
+        "name": "Recent title fallback",
+        "description": "Visually changes later home rail titles to Anadidos recientes.",
+        "cssUrl": "https://cdn.jsdelivr.net/gh/TorrelUKD/UKD-Jellyfin-skin@main/jellyframe/addons/recent-title.css",
+        "triggerVar": "UKD_RECENT_TITLE_FALLBACK"
       }
     ]
   }

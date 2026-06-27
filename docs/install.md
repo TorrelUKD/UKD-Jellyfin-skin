@@ -23,7 +23,7 @@ Pasos:
 4. Pega la URL anterior.
 5. Pulsa `Load Themes`.
 6. Pulsa `Apply` en `UKD Jellyfin`.
-7. Ajusta variables si quieres.
+7. Ajusta variables si quieres. Los parches `Hide Next Up` y `Rename recent rails` son toggles/addons.
 8. Pulsa `Save & Apply`.
 9. Si no ves cambios, usa `Dashboard > Themes > Settings > Theme Cache > Purge`.
 10. Recarga Jellyfin Web con `Ctrl+Shift+R`.

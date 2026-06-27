@@ -1,6 +1,8 @@
-/* UKD Jellyfin 0.3.2
-   Jellyfin 10.11.10 | Cinematic TV skin | Active variant: Neon Noir
+/* UKD Jellyfin 0.4.0
+   Jellyfin 10.11.10 | Cinematic TV skin | Active variant: Projection Room
    Install: Dashboard > Themes > Marketplace (JellyFrame) | Fallback: Dashboard > Branding > Custom CSS */
+
+/* Pasteable build: base.css + JellyFrame theme refinements */
 
 @font-face {
   font-family: "Elms Sans";
@@ -18,26 +20,27 @@
   src: url("https://cdn.jsdelivr.net/gh/TorrelUKD/UKD-Jellyfin-skin@main/assets/fonts/elms-sans/ElmsSans-Italic-VariableFont_wght.ttf") format("truetype");
 }
 
-/* Pasteable build: base.css + neon-noir.css */
-
 :root {
-  --ukd-bg: #040509;
-  --ukd-bg-raised: rgba(13, 15, 23, 0.88);
-  --ukd-bg-soft: rgba(255, 255, 255, 0.055);
-  --ukd-text: #f7f4ef;
-  --ukd-text-muted: rgba(247, 244, 239, 0.70);
-  --ukd-text-faint: rgba(247, 244, 239, 0.48);
-  --ukd-accent: #7c4dff;
+  --ukd-bg: #050609;
+  --ukd-bg-raised: rgba(18, 20, 27, 0.84);
+  --ukd-bg-soft: rgba(255, 255, 255, 0.06);
+  --ukd-text: #f5f3ee;
+  --ukd-text-muted: rgba(245, 243, 238, 0.68);
+  --ukd-text-faint: rgba(245, 243, 238, 0.48);
+  --ukd-accent: #8a5cff;
   --ukd-accent-2: #00d5ff;
-  --ukd-danger: #ff335c;
+  --ukd-danger: #ef314c;
   --ukd-radius-sm: 10px;
   --ukd-radius-md: 16px;
   --ukd-radius-lg: 24px;
   --ukd-shadow: 0 22px 80px rgba(0, 0, 0, 0.48);
-  --ukd-focus: 0 0 0 3px rgba(255, 255, 255, 0.96), 0 0 0 8px rgba(0, 213, 255, 0.54);
+  --ukd-focus: 0 0 0 3px rgba(255, 255, 255, 0.95), 0 0 0 7px rgba(0, 213, 255, 0.56);
 }
 
-html, body, .backgroundContainer, .dialog {
+html,
+body,
+.backgroundContainer,
+.dialog {
   background: var(--ukd-bg) !important;
   color: var(--ukd-text) !important;
 }
@@ -47,7 +50,8 @@ body {
   letter-spacing: 0.01em;
 }
 
-.backgroundContainer.withBackdrop, .backdropContainer {
+.backgroundContainer.withBackdrop,
+.backdropContainer {
   background-color: var(--ukd-bg) !important;
 }
 
@@ -61,18 +65,22 @@ body {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  background: radial-gradient(circle at 18% 12%, rgba(138, 92, 255, 0.18), transparent 34rem), radial-gradient(circle at 82% 18%, rgba(0, 213, 255, 0.10), transparent 32rem), linear-gradient(90deg, rgba(5, 6, 9, 0.96) 0%, rgba(5, 6, 9, 0.72) 44%, rgba(5, 6, 9, 0.92) 100%), linear-gradient(0deg, rgba(5, 6, 9, 0.98) 0%, rgba(5, 6, 9, 0.70) 48%, rgba(5, 6, 9, 0.92) 100%);
+  background:
+    radial-gradient(circle at 18% 12%, rgba(138, 92, 255, 0.18), transparent 34rem),
+    radial-gradient(circle at 82% 18%, rgba(0, 213, 255, 0.10), transparent 32rem),
+    linear-gradient(90deg, rgba(5, 6, 9, 0.96) 0%, rgba(5, 6, 9, 0.72) 44%, rgba(5, 6, 9, 0.92) 100%),
+    linear-gradient(0deg, rgba(5, 6, 9, 0.98) 0%, rgba(5, 6, 9, 0.70) 48%, rgba(5, 6, 9, 0.92) 100%);
   z-index: -1;
 }
 
-.skinHeader, .skinHeader.focuscontainer-x, .skinHeader-withBackground, .skinHeader-blurred, .noHomeButtonHeader {
+.skinHeader,
+.skinHeader.focuscontainer-x,
+.skinHeader-withBackground,
+.skinHeader-blurred,
+.noHomeButtonHeader {
   background: linear-gradient(180deg, rgba(8, 9, 12, 0.96), rgba(8, 9, 12, 0.72)) !important;
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06) !important;
   backdrop-filter: none !important;
-}
-
-.skinHeader {
-  border-bottom: 1px solid rgba(0, 213, 255, 0.10) !important;
 }
 
 .headerTop {
@@ -91,33 +99,29 @@ body {
   color: var(--ukd-text-muted) !important;
 }
 
-.emby-tab-button:hover, .emby-tab-button:focus, .emby-tab-button-active {
+.emby-tab-button:hover,
+.emby-tab-button:focus,
+.emby-tab-button-active {
   color: var(--ukd-text) !important;
   background: rgba(255, 255, 255, 0.08) !important;
 }
 
-.pageTitle, .sectionTitle, .sectionTitleTextButton, .sectionTitleContainer h2 {
+.pageTitle,
+.sectionTitle,
+.sectionTitleTextButton,
+.sectionTitleContainer h2 {
   color: var(--ukd-text) !important;
   font-weight: 720 !important;
   letter-spacing: 0.01em;
 }
 
-.sectionTitle, .sectionTitleContainer h2 {
+.sectionTitle,
+.sectionTitleContainer h2 {
   font-size: clamp(1.35rem, 2vw, 1.85rem) !important;
 }
 
-.sectionTitle::before, .sectionTitleContainer h2::before {
-  content: "";
-  display: inline-block;
-  width: 0.42rem;
-  height: 1.15rem;
-  margin-right: 0.58rem;
-  border-radius: 999px;
-  background: linear-gradient(180deg, var(--ukd-accent-2), var(--ukd-accent));
-  box-shadow: 0 0 20px rgba(0, 213, 255, 0.42);
-}
-
-.padded-left, .padded-right {
+.padded-left,
+.padded-right {
   padding-left: clamp(1.4rem, 3.2vw, 4.5rem) !important;
   padding-right: clamp(1.4rem, 3.2vw, 4.5rem) !important;
 }
@@ -127,7 +131,14 @@ body {
   margin-bottom: 0.9rem !important;
 }
 
-.card, .cardBox, .cardScalable, .cardContent, .cardContent-button, .cardImage, .coveredImage, .itemDetailImage {
+.card,
+.cardBox,
+.cardScalable,
+.cardContent,
+.cardContent-button,
+.cardImage,
+.coveredImage,
+.itemDetailImage {
   border-radius: var(--ukd-radius-md) !important;
 }
 
@@ -136,13 +147,15 @@ body {
   box-shadow: none !important;
 }
 
-.cardContent, .cardContent-button, .itemDetailImage {
+.cardContent,
+.cardContent-button,
+.itemDetailImage {
   overflow: hidden !important;
   box-shadow: var(--ukd-shadow) !important;
-  border: 1px solid rgba(255, 255, 255, 0.075) !important;
 }
 
-.cardContent::after, .cardContent-button::after {
+.cardContent::after,
+.cardContent-button::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -151,56 +164,80 @@ body {
   border-radius: inherit;
 }
 
-.cardText, .cardText-secondary, .listItemBodyText, .secondary, .fieldDescription {
+.cardText,
+.cardText-secondary,
+.listItemBodyText,
+.secondary,
+.fieldDescription {
   color: var(--ukd-text-muted) !important;
 }
 
-.cardText:first-child, .listItem .listItemBodyText:first-child {
+.cardText:first-child,
+.listItem .listItemBodyText:first-child {
   color: var(--ukd-text) !important;
   font-weight: 560 !important;
 }
 
-.overflowBackdropCard, .overflowSmallBackdropCard, .overflowPortraitCard, .overflowSquareCard {
+.overflowBackdropCard,
+.overflowSmallBackdropCard,
+.overflowPortraitCard,
+.overflowSquareCard {
   margin-inline-end: clamp(1.05rem, 1.4vw, 1.65rem) !important;
 }
 
-.overflowBackdropCard .cardScalable, .overflowSmallBackdropCard .cardScalable {
+.overflowBackdropCard .cardScalable,
+.overflowSmallBackdropCard .cardScalable {
   min-width: clamp(17rem, 20vw, 24rem) !important;
 }
 
-.itemsContainer > .card:focus-within, .card:focus-within .cardContent, .card:focus-within .cardContent-button, .paper-icon-button-light:focus, .emby-button:focus, .itemAction:focus, .listItem:focus, .navMenuOption:focus, .emby-tab-button:focus {
+.itemsContainer > .card:focus-within,
+.card:focus-within .cardContent,
+.card:focus-within .cardContent-button,
+.paper-icon-button-light:focus,
+.emby-button:focus,
+.itemAction:focus,
+.listItem:focus,
+.navMenuOption:focus,
+.emby-tab-button:focus {
   box-shadow: var(--ukd-focus) !important;
   outline: none !important;
 }
 
-.card:focus-within .cardContent, .card:focus-within .cardContent-button {
-  border-color: rgba(0, 213, 255, 0.80) !important;
-}
-
-.card:hover .cardContent, .card:hover .cardContent-button, .card:focus-within .cardContent, .card:focus-within .cardContent-button {
+.card:hover .cardContent,
+.card:hover .cardContent-button,
+.card:focus-within .cardContent,
+.card:focus-within .cardContent-button {
   transform: scale(1.025);
 }
 
-.cardContent, .cardContent-button {
+.cardContent,
+.cardContent-button {
   transition: transform 120ms ease, box-shadow 120ms ease !important;
 }
 
-.raised, .button-submit, .emby-button {
+.raised,
+.button-submit,
+.emby-button {
   border-radius: 999px !important;
   font-weight: 740 !important;
 }
 
-.button-submit, .raised.button-submit, .btnPlay, .btnResume {
+.button-submit,
+.raised.button-submit,
+.btnPlay,
+.btnResume {
   background: linear-gradient(135deg, var(--ukd-accent), var(--ukd-accent-2)) !important;
   color: #fff !important;
   box-shadow: 0 14px 36px rgba(0, 213, 255, 0.22) !important;
 }
 
-.fab, .paper-icon-button-light {
+.fab,
+.paper-icon-button-light {
   color: var(--ukd-text) !important;
 }
 
-.mainDrawer, .mainDrawer-scrollContainer {
+.mainDrawer,
+.mainDrawer-scrollContainer {
   background: rgba(8, 9, 12, 0.98) !important;
   color: var(--ukd-text) !important;
 }
@@ -216,15 +253,22 @@ body {
   color: var(--ukd-text) !important;
 }
 
-.detailPageWrapperContainer, .itemBackdrop, .detailPagePrimaryContainer {
+.detailPageWrapperContainer,
+.itemBackdrop,
+.detailPagePrimaryContainer {
   background: transparent !important;
 }
 
-.itemDetailPage .detailLogo, .itemDetailPage .parentName, .itemDetailPage .itemName {
+.itemDetailPage .detailLogo,
+.itemDetailPage .parentName,
+.itemDetailPage .itemName {
   filter: drop-shadow(0 8px 22px rgba(0, 0, 0, 0.74));
 }
 
-.itemDetailPage .overview, .itemDetailPage .itemMiscInfo, .itemDetailPage .genres, .itemDetailPage .tagline {
+.itemDetailPage .overview,
+.itemDetailPage .itemMiscInfo,
+.itemDetailPage .genres,
+.itemDetailPage .tagline {
   max-width: 68rem !important;
   color: var(--ukd-text-muted) !important;
 }
@@ -235,32 +279,44 @@ body {
   margin-bottom: 0.55rem !important;
 }
 
-.listItem:hover, .listItem:focus {
+.listItem:hover,
+.listItem:focus {
   background: rgba(255, 255, 255, 0.075) !important;
 }
 
-.emby-input, .emby-textarea, .emby-select {
+.emby-input,
+.emby-textarea,
+.emby-select {
   background: rgba(255, 255, 255, 0.06) !important;
   border-color: rgba(255, 255, 255, 0.16) !important;
   border-radius: 12px !important;
   color: var(--ukd-text) !important;
 }
 
-.emby-input:focus, .emby-textarea:focus, .emby-select:focus, .emby-select-withcolor {
+.emby-input:focus,
+.emby-textarea:focus,
+.emby-select:focus,
+.emby-select-withcolor {
   border-color: var(--ukd-accent-2) !important;
   box-shadow: var(--ukd-focus) !important;
 }
 
-.nowPlayingBar, .videoOsdBottom, .videoOsdHeader {
+.nowPlayingBar,
+.videoOsdBottom,
+.videoOsdHeader {
   background: linear-gradient(180deg, rgba(5, 6, 9, 0.18), rgba(5, 6, 9, 0.92)) !important;
   color: var(--ukd-text) !important;
 }
 
-.mdl-slider-background-lower, .sliderBubble, .progressring-spiner {
+.mdl-slider-background-lower,
+.sliderBubble,
+.progressring-spiner {
   background-color: var(--ukd-accent-2) !important;
 }
 
-.itemProgressBarForeground, .playedIndicator, .countIndicator {
+.itemProgressBarForeground,
+.playedIndicator,
+.countIndicator {
   background: linear-gradient(135deg, var(--ukd-accent), var(--ukd-accent-2)) !important;
 }
 
@@ -268,7 +324,8 @@ body {
   background: radial-gradient(circle at 50% 10%, rgba(138, 92, 255, 0.22), transparent 36rem), var(--ukd-bg) !important;
 }
 
-#loginPage .readOnlyContent, #loginPage form {
+#loginPage .readOnlyContent,
+#loginPage form {
   max-width: 28rem !important;
 }
 
@@ -278,17 +335,30 @@ body {
 }
 
 @media (min-width: 80em) {
-  .homePage .emby-scroller { margin-right: 0 !important; }
-  .homePage .itemsContainer { gap: 0.15rem !important; }
+  .homePage .emby-scroller {
+    margin-right: 0 !important;
+  }
+
+  .homePage .itemsContainer {
+    gap: 0.15rem !important;
+  }
 }
 
 @media (max-width: 60em) {
-  .headerTabs.sectionTabs { font-size: 1rem !important; }
-  .overflowBackdropCard .cardScalable, .overflowSmallBackdropCard .cardScalable { min-width: 15rem !important; }
+  .headerTabs.sectionTabs {
+    font-size: 1rem !important;
+  }
+
+  .overflowBackdropCard .cardScalable,
+  .overflowSmallBackdropCard .cardScalable {
+    min-width: 15rem !important;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
+  *,
+  *::before,
+  *::after {
     animation-duration: 1ms !important;
     transition-duration: 1ms !important;
   }
@@ -302,11 +372,21 @@ body {
   --ukd-library-lift: translateY(-0.65rem) scale(1.105);
 }
 
-.homePage, .mainAnimatedPage, .page {
+.homePage,
+.mainAnimatedPage,
+.page {
   overflow-x: clip !important;
 }
 
-.homePage .emby-scroller, .homePage .itemsContainer, .homePage .scrollSlider, .homePage .section0, .homePage .section1, .homePage .section2, .homePage .section3, .homePage .section4, .homePage .section5 {
+.homePage .emby-scroller,
+.homePage .itemsContainer,
+.homePage .scrollSlider,
+.homePage .section0,
+.homePage .section1,
+.homePage .section2,
+.homePage .section3,
+.homePage .section4,
+.homePage .section5 {
   overflow: visible !important;
 }
 
@@ -315,12 +395,15 @@ body {
   margin-bottom: 1.15rem !important;
 }
 
-.sectionTitle, .sectionTitleTextButton, .sectionTitleContainer h2 {
+.sectionTitle,
+.sectionTitleTextButton,
+.sectionTitleContainer h2 {
   font-size: clamp(1.65rem, 2.2vw, 2.25rem) !important;
   font-weight: 850 !important;
 }
 
-.sectionTitle::before, .sectionTitleContainer h2::before {
+.sectionTitle::before,
+.sectionTitleContainer h2::before {
   width: 0.35rem !important;
   height: 1.35rem !important;
   margin-right: 0.7rem !important;
@@ -328,16 +411,22 @@ body {
   box-shadow: 0 0 22px rgba(244, 117, 33, 0.45) !important;
 }
 
-.homePage .card, .homePage .cardBox, .homePage .cardScalable {
+.homePage .card,
+.homePage .cardBox,
+.homePage .cardScalable {
   overflow: visible !important;
 }
 
-.homePage .cardContent, .homePage .cardContent-button {
+.homePage .cardContent,
+.homePage .cardContent-button {
   transform-origin: center center !important;
   transition: transform 140ms ease, border-color 140ms ease, box-shadow 140ms ease, filter 140ms ease !important;
 }
 
-.homePage .card:hover .cardContent, .homePage .card:hover .cardContent-button, .homePage .card:focus-within .cardContent, .homePage .card:focus-within .cardContent-button {
+.homePage .card:hover .cardContent,
+.homePage .card:hover .cardContent-button,
+.homePage .card:focus-within .cardContent,
+.homePage .card:focus-within .cardContent-button {
   transform: var(--ukd-card-lift) !important;
   filter: saturate(1.12) brightness(1.06) !important;
   border-color: rgba(244, 117, 33, 0.88) !important;
@@ -345,19 +434,23 @@ body {
   z-index: 30 !important;
 }
 
-.homePage .card:hover, .homePage .card:focus-within {
+.homePage .card:hover,
+.homePage .card:focus-within {
   z-index: 40 !important;
 }
 
-.homePage .cardContent::after, .homePage .cardContent-button::after {
+.homePage .cardContent::after,
+.homePage .cardContent-button::after {
   background: linear-gradient(180deg, transparent 50%, rgba(0, 0, 0, 0.42)) !important;
 }
 
-.homePage .overflowBackdropCard .cardScalable, .homePage .overflowSmallBackdropCard .cardScalable {
+.homePage .overflowBackdropCard .cardScalable,
+.homePage .overflowSmallBackdropCard .cardScalable {
   min-width: clamp(18.5rem, 20.8vw, 25.5rem) !important;
 }
 
-.homePage .overflowBackdropCard, .homePage .overflowSmallBackdropCard {
+.homePage .overflowBackdropCard,
+.homePage .overflowSmallBackdropCard {
   margin-inline-end: clamp(1.35rem, 1.7vw, 2rem) !important;
 }
 
@@ -373,37 +466,39 @@ body {
   color: rgba(255, 255, 255, 0.56) !important;
 }
 
-.homePage .section0 .cardText, .homePage .section0 .cardText:first-child, .homePage .section0 .cardText-secondary {
+.homePage .section0 .cardText,
+.homePage .section0 .cardText:first-child,
+.homePage .section0 .cardText-secondary {
   font-size: clamp(1.12rem, 1.22vw, 1.42rem) !important;
   font-weight: 720 !important;
   color: rgba(255, 255, 255, 0.90) !important;
 }
 
-.homePage .section0 .cardImageContainer .cardText, .homePage .section0 .cardImageContainer .cardText-secondary, .homePage .section0 .cardContent .cardText, .homePage .section0 .cardContent .cardText-secondary, .homePage .section0 .cardContent-button .cardText, .homePage .section0 .cardContent-button .cardText-secondary {
+.homePage .section0 .cardImageContainer .cardText,
+.homePage .section0 .cardImageContainer .cardText-secondary,
+.homePage .section0 .cardContent .cardText,
+.homePage .section0 .cardContent .cardText-secondary,
+.homePage .section0 .cardContent-button .cardText,
+.homePage .section0 .cardContent-button .cardText-secondary {
   display: none !important;
 }
 
-.homePage .section0 .cardContent, .homePage .section0 .cardContent-button {
+.homePage .section0 .cardContent,
+.homePage .section0 .cardContent-button {
   border-radius: 1.45rem !important;
   border: 1px solid rgba(255, 255, 255, 0.12) !important;
 }
 
-.homePage .section0 .card:hover .cardContent, .homePage .section0 .card:hover .cardContent-button, .homePage .section0 .card:focus-within .cardContent, .homePage .section0 .card:focus-within .cardContent-button {
+.homePage .section0 .card:hover .cardContent,
+.homePage .section0 .card:hover .cardContent-button,
+.homePage .section0 .card:focus-within .cardContent,
+.homePage .section0 .card:focus-within .cardContent-button {
   transform: var(--ukd-library-lift) !important;
   box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.97), 0 0 0 9px rgba(244, 117, 33, 0.78), 0 30px 86px rgba(0, 0, 0, 0.80) !important;
 }
 
 .homePage .section0 .cardText:first-child {
   margin-top: 0.78rem !important;
-}
-
-div.nextUpSection, .nextUpSection, #nextUpSection, #nextUpCollapsible {
-  display: none !important;
-}
-
-/* Jellyfin home order in the provided layout: My Media, Resume, Next Up. */
-.homePage .section2 {
-  display: none !important;
 }
 
 .homePage .emby-scrollbuttons {
@@ -437,7 +532,11 @@ body {
 }
 
 .backgroundContainer::before {
-  background: radial-gradient(ellipse at 24% 0%, rgba(255, 138, 42, 0.18), transparent 32rem), radial-gradient(ellipse at 78% 10%, rgba(94, 231, 255, 0.11), transparent 34rem), linear-gradient(90deg, rgba(2, 3, 10, 0.98) 0%, rgba(10, 13, 24, 0.78) 42%, rgba(2, 3, 10, 0.94) 100%), linear-gradient(0deg, rgba(2, 3, 10, 0.98) 0%, rgba(36, 17, 54, 0.58) 46%, rgba(2, 3, 10, 0.88) 100%) !important;
+  background:
+    radial-gradient(ellipse at 24% 0%, rgba(255, 138, 42, 0.18), transparent 32rem),
+    radial-gradient(ellipse at 78% 10%, rgba(94, 231, 255, 0.11), transparent 34rem),
+    linear-gradient(90deg, rgba(2, 3, 10, 0.98) 0%, rgba(10, 13, 24, 0.78) 42%, rgba(2, 3, 10, 0.94) 100%),
+    linear-gradient(0deg, rgba(2, 3, 10, 0.98) 0%, rgba(36, 17, 54, 0.58) 46%, rgba(2, 3, 10, 0.88) 100%) !important;
 }
 
 .backgroundContainer::after {
@@ -451,18 +550,30 @@ body {
   z-index: -1;
 }
 
-.skinHeader, .skinHeader.focuscontainer-x, .skinHeader-withBackground, .skinHeader-blurred, .noHomeButtonHeader {
+.skinHeader,
+.skinHeader.focuscontainer-x,
+.skinHeader-withBackground,
+.skinHeader-blurred,
+.noHomeButtonHeader {
   background: linear-gradient(180deg, rgba(2, 3, 10, 0.98), rgba(2, 3, 10, 0.76)) !important;
   border-bottom: 1px solid rgba(255, 138, 42, 0.20) !important;
 }
 
-.headerTabs.sectionTabs, .pageTitle, .sectionTitle, .sectionTitleTextButton, .sectionTitleContainer h2 {
+.headerTabs.sectionTabs,
+.pageTitle,
+.sectionTitle,
+.sectionTitleTextButton,
+.sectionTitleContainer h2 {
   font-family: var(--ukd-display-font) !important;
   font-stretch: condensed;
   letter-spacing: 0.055em !important;
 }
 
-.emby-tab-button, .paper-icon-button-light, .emby-button, .cardText-secondary, .secondary {
+.emby-tab-button,
+.paper-icon-button-light,
+.emby-button,
+.cardText-secondary,
+.secondary {
   font-family: var(--ukd-utility-font) !important;
 }
 
@@ -471,17 +582,22 @@ body {
   letter-spacing: 0.075em !important;
 }
 
-.emby-tab-button:hover, .emby-tab-button:focus, .emby-tab-button-active {
+.emby-tab-button:hover,
+.emby-tab-button:focus,
+.emby-tab-button-active {
   background: linear-gradient(90deg, rgba(255, 138, 42, 0.18), rgba(94, 231, 255, 0.08)) !important;
 }
 
-.sectionTitle, .sectionTitleTextButton, .sectionTitleContainer h2 {
+.sectionTitle,
+.sectionTitleTextButton,
+.sectionTitleContainer h2 {
   text-transform: uppercase;
   line-height: 0.96 !important;
   text-shadow: 0 10px 32px rgba(0, 0, 0, 0.72);
 }
 
-.sectionTitle::before, .sectionTitleContainer h2::before {
+.sectionTitle::before,
+.sectionTitleContainer h2::before {
   width: 0.52rem !important;
   height: 1.75rem !important;
   margin-right: 0.82rem !important;
@@ -506,22 +622,32 @@ body {
   background: linear-gradient(90deg, rgba(255, 138, 42, 0.72), rgba(94, 231, 255, 0.20), transparent 72%);
 }
 
-.homePage .cardContent, .homePage .cardContent-button {
+.homePage .cardContent,
+.homePage .cardContent-button {
   border-radius: 1.35rem 1.35rem 1.1rem 0.72rem !important;
   background-color: var(--ukd-screen) !important;
   border-color: rgba(255, 208, 138, 0.12) !important;
 }
 
-.homePage .cardContent::after, .homePage .cardContent-button::after {
-  background: linear-gradient(90deg, rgba(255, 138, 42, 0.20), transparent 18%), linear-gradient(180deg, transparent 48%, rgba(0, 0, 0, 0.54)) !important;
+.homePage .cardContent::after,
+.homePage .cardContent-button::after {
+  background:
+    linear-gradient(90deg, rgba(255, 138, 42, 0.20), transparent 18%),
+    linear-gradient(180deg, transparent 48%, rgba(0, 0, 0, 0.54)) !important;
 }
 
-.homePage .card:hover .cardContent, .homePage .card:hover .cardContent-button, .homePage .card:focus-within .cardContent, .homePage .card:focus-within .cardContent-button {
+.homePage .card:hover .cardContent,
+.homePage .card:hover .cardContent-button,
+.homePage .card:focus-within .cardContent,
+.homePage .card:focus-within .cardContent-button {
   border-color: rgba(255, 138, 42, 0.94) !important;
   box-shadow: -0.58rem 0 0 rgba(255, 138, 42, 0.94), 0 0 0 3px rgba(255, 255, 255, 0.96), 0 0 0 8px rgba(124, 77, 255, 0.58), 0 28px 78px rgba(0, 0, 0, 0.78) !important;
 }
 
-.homePage .section0 .card:hover .cardContent, .homePage .section0 .card:hover .cardContent-button, .homePage .section0 .card:focus-within .cardContent, .homePage .section0 .card:focus-within .cardContent-button {
+.homePage .section0 .card:hover .cardContent,
+.homePage .section0 .card:hover .cardContent-button,
+.homePage .section0 .card:focus-within .cardContent,
+.homePage .section0 .card:focus-within .cardContent-button {
   box-shadow: -0.72rem 0 0 rgba(255, 138, 42, 0.98), 0 0 0 4px rgba(255, 255, 255, 0.97), 0 0 0 10px rgba(94, 231, 255, 0.42), 0 34px 90px rgba(0, 0, 0, 0.84) !important;
 }
 
@@ -535,22 +661,39 @@ body {
   letter-spacing: 0.035em !important;
 }
 
-.itemProgressBarForeground, .playedIndicator, .countIndicator, .button-submit, .raised.button-submit, .btnPlay, .btnResume {
+.itemProgressBarForeground,
+.playedIndicator,
+.countIndicator,
+.button-submit,
+.raised.button-submit,
+.btnPlay,
+.btnResume {
   background: linear-gradient(135deg, var(--ukd-projector), var(--ukd-projector-soft) 48%, var(--ukd-cue)) !important;
 }
 
 @media (max-width: 60em) {
-  .sectionTitle, .sectionTitleTextButton, .sectionTitleContainer h2 {
+  .sectionTitle,
+  .sectionTitleTextButton,
+  .sectionTitleContainer h2 {
     letter-spacing: 0.035em !important;
   }
 }
 
 /* UKD 0.3.1 - Browser stability fixes before theme packaging. */
 :root {
-  --ukd-version: "0.3.2";
+  --ukd-version: "0.4.0";
 }
 
-.skinHeader, .skinHeader.focuscontainer-x, .skinHeader-withBackground, .skinHeader-blurred, .noHomeButtonHeader, .headerTop, .headerTabs, .headerTabs.sectionTabs, .emby-tabs-slider, .emby-tabs {
+.skinHeader,
+.skinHeader.focuscontainer-x,
+.skinHeader-withBackground,
+.skinHeader-blurred,
+.noHomeButtonHeader,
+.headerTop,
+.headerTabs,
+.headerTabs.sectionTabs,
+.emby-tabs-slider,
+.emby-tabs {
   overflow: visible !important;
 }
 
@@ -567,48 +710,47 @@ body {
   box-shadow: inset 0 0 0 1px rgba(255, 208, 138, 0.08) !important;
 }
 
-.headerTabs.sectionTabs .emby-tab-button:focus, .headerTabs.sectionTabs .emby-tab-button-active {
+.headerTabs.sectionTabs .emby-tab-button:focus,
+.headerTabs.sectionTabs .emby-tab-button-active {
   box-shadow: inset 0 0 0 2px rgba(255, 248, 235, 0.96), 0 0 0 3px rgba(94, 231, 255, 0.62) !important;
 }
 
-.homePage .sectionTitleContainer, .homePage .verticalSection, .homePage .emby-scroller-container, .homePage .padded-top-focusscale, .homePage .padded-bottom-focusscale {
+.homePage .sectionTitleContainer,
+.homePage .verticalSection,
+.homePage .emby-scroller-container,
+.homePage .padded-top-focusscale,
+.homePage .padded-bottom-focusscale {
   overflow: visible !important;
 }
 
-.homePage .sectionTitle, .homePage .sectionTitleTextButton, .homePage .sectionTitleContainer h2 {
+.homePage .sectionTitle,
+.homePage .sectionTitleTextButton,
+.homePage .sectionTitleContainer h2 {
   margin-left: clamp(0.45rem, 0.8vw, 0.95rem) !important;
 }
 
-.homePage .sectionTitle::before, .homePage .sectionTitleContainer h2::before {
+.homePage .sectionTitle::before,
+.homePage .sectionTitleContainer h2::before {
   flex: 0 0 auto;
 }
 
-.homePage .section0 .cardImageContainer .cardText, .homePage .section0 .cardImageContainer .cardText-first, .homePage .section0 .cardImageContainer .cardText-secondary, .homePage .section0 .cardImageContainer .cardTextCentered, .homePage .section0 .cardImageContainer .cardImageIcon, .homePage .section0 .cardImageContainer .innerCardFooter, .homePage .section0 .cardImageContainer .cardOverlayContainer, .homePage .section0 .cardImageContainer .cardOverlayButton, .homePage .section0 .cardContent .cardText, .homePage .section0 .cardContent .cardText-first, .homePage .section0 .cardContent .cardText-secondary, .homePage .section0 .cardContent-button .cardText, .homePage .section0 .cardContent-button .cardText-first, .homePage .section0 .cardContent-button .cardText-secondary {
+.homePage .section0 .cardImageContainer .cardText,
+.homePage .section0 .cardImageContainer .cardText-first,
+.homePage .section0 .cardImageContainer .cardText-secondary,
+.homePage .section0 .cardImageContainer .cardTextCentered,
+.homePage .section0 .cardImageContainer .cardImageIcon,
+.homePage .section0 .cardImageContainer .innerCardFooter,
+.homePage .section0 .cardImageContainer .cardOverlayContainer,
+.homePage .section0 .cardImageContainer .cardOverlayButton,
+.homePage .section0 .cardContent .cardText,
+.homePage .section0 .cardContent .cardText-first,
+.homePage .section0 .cardContent .cardText-secondary,
+.homePage .section0 .cardContent-button .cardText,
+.homePage .section0 .cardContent-button .cardText-first,
+.homePage .section0 .cardContent-button .cardText-secondary {
   display: none !important;
   opacity: 0 !important;
   visibility: hidden !important;
-}
-
-/* Structural fallback for the observed home order: My Media, Continue Watching, Next Up. */
-.homePage .section2, .homePage .verticalSection:nth-of-type(3), .homePage .homeSectionsContainer > .verticalSection:nth-child(3), .homePage .sections > .verticalSection:nth-child(3) {
-  display: none !important;
-}
-
-/* CSS cannot rename dynamic Jellyfin strings; this visual fallback targets later home rails. */
-.homePage .verticalSection:nth-of-type(n+4) .sectionTitle, .homePage .verticalSection:nth-of-type(n+4) .sectionTitleTextButton, .homePage .verticalSection:nth-of-type(n+4) .sectionTitleContainer h2 {
-  font-size: 0 !important;
-}
-
-.homePage .verticalSection:nth-of-type(n+4) .sectionTitle::after, .homePage .verticalSection:nth-of-type(n+4) .sectionTitleTextButton::after, .homePage .verticalSection:nth-of-type(n+4) .sectionTitleContainer h2::after {
-  content: "A\00D1 ADIDOS RECIENTES";
-  display: inline-block;
-  color: var(--ukd-text) !important;
-  font-family: var(--ukd-display-font) !important;
-  font-size: clamp(1.65rem, 2.2vw, 2.25rem) !important;
-  font-weight: 850 !important;
-  letter-spacing: 0.055em !important;
-  line-height: 0.96 !important;
-  vertical-align: middle;
 }
 
 /* UKD 0.3.2 - JellyFrame theme adaptation. */
@@ -617,15 +759,64 @@ body {
   --ukd-library-lift: translateY(calc(-1 * var(--ukd-library-lift-distance, 0.65rem))) scale(var(--ukd-library-scale, 1.105));
 }
 
-.homePage .card:hover .cardContent, .homePage .card:hover .cardContent-button, .homePage .card:focus-within .cardContent, .homePage .card:focus-within .cardContent-button {
+.homePage .card:hover .cardContent,
+.homePage .card:hover .cardContent-button,
+.homePage .card:focus-within .cardContent,
+.homePage .card:focus-within .cardContent-button {
   border-color: var(--ukd-projector, #ff8a2a) !important;
   box-shadow: -0.58rem 0 0 var(--ukd-projector, #ff8a2a), 0 24px 74px rgba(0, 0, 0, 0.78) !important;
 }
 
-.homePage .section0 .card:hover .cardContent, .homePage .section0 .card:hover .cardContent-button, .homePage .section0 .card:focus-within .cardContent, .homePage .section0 .card:focus-within .cardContent-button {
+.homePage .section0 .card:hover .cardContent,
+.homePage .section0 .card:hover .cardContent-button,
+.homePage .section0 .card:focus-within .cardContent,
+.homePage .section0 .card:focus-within .cardContent-button {
   box-shadow: -0.72rem 0 0 var(--ukd-projector, #ff8a2a), 0 30px 86px rgba(0, 0, 0, 0.84) !important;
 }
 
-.homePage .card:focus-within .cardText:first-child, .homePage .card:hover .cardText:first-child {
+.homePage .card:focus-within .cardText:first-child,
+.homePage .card:hover .cardText:first-child {
   color: var(--ukd-projector-soft, #ffd08a) !important;
+}
+
+/* UKD 0.4.0 - Projection gate refinement. */
+.homePage .cardContent,
+.homePage .cardContent-button {
+  outline: 1px solid rgba(255, 208, 138, 0.08) !important;
+  outline-offset: -1px !important;
+}
+
+.homePage .cardContent::before,
+.homePage .cardContent-button::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, var(--ukd-projector-soft, #ffd08a), var(--ukd-projector, #ff8a2a) 58%, var(--ukd-accent, #7c4dff));
+  box-shadow: 0 0 0 rgba(255, 138, 42, 0);
+  transition: width 140ms ease, box-shadow 140ms ease !important;
+  z-index: 2;
+}
+
+.homePage .card:hover .cardContent::before,
+.homePage .card:hover .cardContent-button::before,
+.homePage .card:focus-within .cardContent::before,
+.homePage .card:focus-within .cardContent-button::before {
+  width: 0.42rem;
+  box-shadow: 0 0 26px rgba(255, 138, 42, 0.72), 0 0 62px rgba(124, 77, 255, 0.25);
+}
+
+.homePage .card:hover .cardContent,
+.homePage .card:hover .cardContent-button,
+.homePage .card:focus-within .cardContent,
+.homePage .card:focus-within .cardContent-button {
+  box-shadow: 0 0 0 2px rgba(255, 248, 235, 0.82), 0 28px 78px rgba(0, 0, 0, 0.80) !important;
+}
+
+.homePage .section0 .card:hover .cardContent,
+.homePage .section0 .card:hover .cardContent-button,
+.homePage .section0 .card:focus-within .cardContent,
+.homePage .section0 .card:focus-within .cardContent-button {
+  box-shadow: 0 0 0 2px rgba(255, 248, 235, 0.88), 0 34px 90px rgba(0, 0, 0, 0.86) !important;
 }

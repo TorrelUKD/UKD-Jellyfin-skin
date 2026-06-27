@@ -67,6 +67,6 @@ El archivo `dist/ukd-jellyfin.css` usa actualmente la direccion `Neon Noir` como
 
 ## Version actual
 
-`0.3.2` adapta la skin para JellyFrame: mantiene la fuente `Elms Sans` desde archivos del repo servidos por jsDelivr, agrega variables configurables y cambia el foco de cards a una barra lateral para evitar que la linea inferior cruce el texto. `Colecciones` se debe ocultar desde la configuracion de Jellyfin, no desde CSS.
+`0.4.0` adapta la skin al formato correcto de JellyFrame: usa `jellyframe/themes.json`, mueve los parches fragiles (`A continuacion` y titulo de recientes) a addons opcionales, mantiene `Elms Sans` desde archivos del repo servidos por jsDelivr y refina el foco de cards como ranura lateral de proyector.
 
 Los pedidos de `Seguir viendo` agrupado por serie y `Recientemente anadido` con caducidad de 20 dias estan documentados en `docs/feature-limits.md` porque requieren logica de Jellyfin, no solo CSS.
