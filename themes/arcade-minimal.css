@@ -1,0 +1,36 @@
+/* UKD Jellyfin - Arcade Minimal */
+
+:root {
+  --ukd-bg: #050706;
+  --ukd-bg-raised: rgba(15, 20, 18, 0.88);
+  --ukd-bg-soft: rgba(255, 255, 255, 0.05);
+  --ukd-text: #f2f7f1;
+  --ukd-text-muted: rgba(242, 247, 241, 0.68);
+  --ukd-text-faint: rgba(242, 247, 241, 0.46);
+  --ukd-accent: #61ff9f;
+  --ukd-accent-2: #57d8ff;
+  --ukd-danger: #ff4a5e;
+  --ukd-radius-sm: 8px;
+  --ukd-radius-md: 12px;
+  --ukd-radius-lg: 18px;
+  --ukd-focus: 0 0 0 3px rgba(255, 255, 255, 0.96), 0 0 0 8px rgba(97, 255, 159, 0.46);
+}
+
+.cardContent,
+.cardContent-button,
+.itemDetailImage {
+  box-shadow: 0 18px 54px rgba(0, 0, 0, 0.42) !important;
+}
+
+.skinHeader,
+.mainDrawer {
+  background: rgba(6, 8, 7, 0.96) !important;
+}
+
+.button-submit,
+.raised.button-submit,
+.btnPlay,
+.btnResume {
+  background: linear-gradient(135deg, #61ff9f, #57d8ff) !important;
+  color: #06100c !important;
+}

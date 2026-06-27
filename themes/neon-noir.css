@@ -1,0 +1,40 @@
+/* UKD Jellyfin - Neon Noir */
+
+:root {
+  --ukd-bg: #040509;
+  --ukd-bg-raised: rgba(13, 15, 23, 0.88);
+  --ukd-bg-soft: rgba(255, 255, 255, 0.055);
+  --ukd-text: #f7f4ef;
+  --ukd-text-muted: rgba(247, 244, 239, 0.70);
+  --ukd-text-faint: rgba(247, 244, 239, 0.48);
+  --ukd-accent: #7c4dff;
+  --ukd-accent-2: #00d5ff;
+  --ukd-danger: #ff335c;
+  --ukd-focus: 0 0 0 3px rgba(255, 255, 255, 0.96), 0 0 0 8px rgba(0, 213, 255, 0.54);
+}
+
+.sectionTitle::before,
+.sectionTitleContainer h2::before {
+  content: "";
+  display: inline-block;
+  width: 0.42rem;
+  height: 1.15rem;
+  margin-right: 0.58rem;
+  border-radius: 999px;
+  background: linear-gradient(180deg, var(--ukd-accent-2), var(--ukd-accent));
+  box-shadow: 0 0 20px rgba(0, 213, 255, 0.42);
+}
+
+.skinHeader {
+  border-bottom: 1px solid rgba(0, 213, 255, 0.10) !important;
+}
+
+.cardContent,
+.cardContent-button {
+  border: 1px solid rgba(255, 255, 255, 0.075) !important;
+}
+
+.card:focus-within .cardContent,
+.card:focus-within .cardContent-button {
+  border-color: rgba(0, 213, 255, 0.80) !important;
+}

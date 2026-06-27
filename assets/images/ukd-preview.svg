@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">UKD Jellyfin preview</title>
+  <desc id="desc">Projection-room inspired Jellyfin skin preview with amber focus and dark cinematic rails.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#02030a"/>
+      <stop offset="0.52" stop-color="#0a0d18"/>
+      <stop offset="1" stop-color="#241136"/>
+    </linearGradient>
+    <linearGradient id="slit" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffd08a"/>
+      <stop offset="0.48" stop-color="#ff8a2a"/>
+      <stop offset="1" stop-color="#7c4dff"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="18" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <rect x="0" y="0" width="12" height="675" fill="url(#slit)" filter="url(#glow)"/>
+  <circle cx="310" cy="110" r="260" fill="#ff8a2a" opacity="0.12"/>
+  <circle cx="930" cy="160" r="300" fill="#5ee7ff" opacity="0.08"/>
+  <rect x="74" y="54" width="168" height="62" rx="31" fill="#241910" stroke="#ffd08a" stroke-width="3"/>
+  <text x="158" y="93" fill="#fff8eb" font-family="Arial, sans-serif" font-size="24" font-weight="700" text-anchor="middle" letter-spacing="3">INICIO</text>
+  <text x="284" y="93" fill="#bdb7ad" font-family="Arial, sans-serif" font-size="24" font-weight="700" letter-spacing="3">FAVORITOS</text>
+  <rect x="74" y="176" width="10" height="42" rx="5" fill="url(#slit)"/>
+  <text x="104" y="213" fill="#fff8eb" font-family="Arial, sans-serif" font-size="42" font-weight="900" letter-spacing="5">MIS CONTENIDOS</text>
+  <g transform="translate(74 268)">
+    <rect x="0" y="0" width="260" height="150" rx="24" fill="#101522" stroke="#ff8a2a" stroke-width="3"/>
+    <rect x="-10" y="0" width="10" height="150" rx="5" fill="#ff8a2a"/>
+    <text x="130" y="85" fill="#fff8eb" font-family="Arial, sans-serif" font-size="25" font-weight="800" text-anchor="middle">Anime</text>
+    <text x="130" y="190" fill="#ffd08a" font-family="Arial, sans-serif" font-size="22" font-weight="700" text-anchor="middle">Anime - Peliculas</text>
+  </g>
+  <g transform="translate(374 268)" opacity="0.88">
+    <rect width="260" height="150" rx="24" fill="#101522"/>
+    <text x="130" y="85" fill="#fff8eb" font-family="Arial, sans-serif" font-size="25" font-weight="800" text-anchor="middle">Series</text>
+    <text x="130" y="190" fill="#d8d0c3" font-family="Arial, sans-serif" font-size="22" font-weight="700" text-anchor="middle">Series</text>
+  </g>
+  <g transform="translate(674 268)" opacity="0.72">
+    <rect width="260" height="150" rx="24" fill="#101522"/>
+    <text x="130" y="85" fill="#fff8eb" font-family="Arial, sans-serif" font-size="25" font-weight="800" text-anchor="middle">Peliculas</text>
+    <text x="130" y="190" fill="#d8d0c3" font-family="Arial, sans-serif" font-size="22" font-weight="700" text-anchor="middle">Peliculas</text>
+  </g>
+  <rect x="74" y="518" width="10" height="42" rx="5" fill="url(#slit)"/>
+  <text x="104" y="555" fill="#fff8eb" font-family="Arial, sans-serif" font-size="42" font-weight="900" letter-spacing="5">SEGUIR VIENDO</text>
+</svg>

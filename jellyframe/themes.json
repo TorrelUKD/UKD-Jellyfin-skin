@@ -1,0 +1,68 @@
+[
+  {
+    "id": "ukd-jellyfin",
+    "name": "UKD Jellyfin",
+    "author": "TorrelUKD",
+    "description": "Cinematic TV-first Jellyfin theme with projection-room identity, Elms Sans typography, strong remote focus, and backdrop atmosphere for movies, series and anime libraries.",
+    "version": "0.3.2",
+    "jellyfin": "10.11+",
+    "tags": ["dark", "modern", "backdrops", "tv", "minimal"],
+    "previewUrl": "https://cdn.jsdelivr.net/gh/TorrelUKD/UKD-Jellyfin-skin@main/assets/images/ukd-preview.svg",
+    "sourceUrl": "https://github.com/TorrelUKD/UKD-Jellyfin-skin",
+    "cssUrl": "https://cdn.jsdelivr.net/gh/TorrelUKD/UKD-Jellyfin-skin@main/dist/ukd-jellyfin.css",
+    "preconnect": [
+      "https://cdn.jsdelivr.net"
+    ],
+    "vars": [
+      {
+        "key": "UKD_PROJECTOR_OVERRIDE",
+        "name": "Projector amber",
+        "description": "Main focus and projection accent color.",
+        "type": "color",
+        "default": "#ff8a2a"
+      },
+      {
+        "key": "UKD_PROJECTOR_SOFT_OVERRIDE",
+        "name": "Soft amber",
+        "description": "Warm text and highlight color used around focused cards.",
+        "type": "color",
+        "default": "#ffd08a"
+      },
+      {
+        "key": "UKD_CUE_OVERRIDE",
+        "name": "Cue cyan",
+        "description": "Secondary cue light for focus and progress accents.",
+        "type": "color",
+        "default": "#5ee7ff"
+      },
+      {
+        "key": "UKD_CARD_SCALE",
+        "name": "Card focus scale",
+        "description": "Scale applied to regular home cards on hover/focus.",
+        "type": "number",
+        "default": "1.055"
+      },
+      {
+        "key": "UKD_LIBRARY_SCALE",
+        "name": "Library focus scale",
+        "description": "Scale applied to My Media library cards on hover/focus.",
+        "type": "number",
+        "default": "1.105"
+      },
+      {
+        "key": "UKD_CARD_LIFT_DISTANCE",
+        "name": "Card lift distance",
+        "description": "Vertical lift for regular home cards. Use CSS units, e.g. 0.45rem.",
+        "type": "text",
+        "default": "0.45rem"
+      },
+      {
+        "key": "UKD_LIBRARY_LIFT_DISTANCE",
+        "name": "Library lift distance",
+        "description": "Vertical lift for My Media library cards. Use CSS units, e.g. 0.65rem.",
+        "type": "text",
+        "default": "0.65rem"
+      }
+    ]
+  }
+]
